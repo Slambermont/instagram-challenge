@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <p> <%= link_to "Sign out", destroy_user_session_url, method: :delete %> </p>
+      <% else %>
+        <p> <%= link_to "Sign up", new_user_registration_url %> </p>
+        <p> <%= link_to "Sign in", new_user_session_url %> </p>
+      <% end %>
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

@@ -28,16 +28,16 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'GET /show' do
     it 'responds with 200' do
-      post :create, params: { post: { message: 'Hello, Instagram!' } }
-      get :show, params: { id: 1 }
+      @post = create(:post)
+      get :show, params: { id: @post.id }
       expect(response).to have_http_status(200)
     end
   end
 
   describe 'GET /edit' do
     it 'responds with 200' do
-      post :create, params: { post: { message: 'Hello, Instagram!' } }
-      get :edit, params: { id: 1 }
+      @post = create(:post)
+      get :edit, params: { id: @post.id }
       expect(response).to have_http_status(200)
     end
   end

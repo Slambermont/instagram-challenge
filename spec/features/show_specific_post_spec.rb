@@ -7,7 +7,7 @@ RSpec.feature 'Shows a specific post', type: :feature do
     fill_in "Message", with: "Hello, Instagram!"
     click_button "Add a New Post"
     click_link('Hello, Instagram!')
-    expect(current_path).to eq('/posts/1')
+    expect(page).to have_content('Hello, Instagram!')
   end
 
   scenario 'links back to homepage' do
