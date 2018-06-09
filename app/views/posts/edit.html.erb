@@ -2,6 +2,11 @@
 
 <%= form_for @post do |f| %>
     <p>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </p>
+
+    <p>
       <%= f.label :message %>
       <%= f.text_area :message %>
     </p>

@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>
   <div class='post'>
     <p> <%= link_to post.message, post %> </p>
+    <%= image_tag post.image.url(:medium) %>
     <p> <%= link_to 'Edit', edit_post_path(post) %> </p>
     <p> <%= link_to 'Delete', post, method: :delete %> </p>
   </div>
