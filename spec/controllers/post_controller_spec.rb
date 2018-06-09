@@ -21,5 +21,8 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to(posts_url)
     end
 
+    it 'creates a new post' do
+      expect{ post :create, params: { post: { message: 'Hello, Instagram!' } } }.to change{ Post.count }.by(1)
+    end
   end
 end
