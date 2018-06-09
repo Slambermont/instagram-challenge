@@ -44,7 +44,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'POST /' do
     # COME BACK TO THIS
-    
+
     # it 'Redirects to homepage' do
     #   @post = create(:post)
     #   get :edit, params: { id: @post.id }
@@ -57,5 +57,12 @@ RSpec.describe PostsController, type: :controller do
     #   get :edit, params: { id: 1 }
     #   expect{ put :update, params: { message: 'Hello again, Instagram!' } }.to change{ @post.message }
     # end
+  end
+
+  describe "DELETE /" do
+    it "deletes a post" do
+      @post = create(:post)
+      expect{ delete :destroy, params: { id: @post.id } }.to change{ Post.count }.by(-1)
+    end
   end
 end
