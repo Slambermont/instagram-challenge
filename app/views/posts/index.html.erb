@@ -1,7 +1,10 @@
 <h1>Instagram posts</h1>
 
 <% @posts.each do |post| %>
-  <p> <%= link_to post.message, post %> </p>
+  <div class='post'>
+    <p> <%= link_to post.message, post %> </p>
+    <p> <%= link_to 'Edit', edit_post_path(post) %> </p>
+  </div>
 <% end %>
 
 <p> <%= link_to "New post", new_post_path %> </p>

@@ -33,4 +33,29 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'GET /edit' do
+    it 'responds with 200' do
+      post :create, params: { post: { message: 'Hello, Instagram!' } }
+      get :edit, params: { id: 1 }
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe 'POST /' do
+    # COME BACK TO THIS
+    
+    # it 'Redirects to homepage' do
+    #   @post = create(:post)
+    #   get :edit, params: { id: @post.id }
+    #   patch :update, params: { post: { message: @post.message } }
+    #   expect(response).to redirect_to(posts_url)
+    # end
+    #
+    # it 'creates a new post in the database' do
+    #   post :create, params: { post: { message: 'Hello, Instagram!' } }
+    #   get :edit, params: { id: 1 }
+    #   expect{ put :update, params: { message: 'Hello again, Instagram!' } }.to change{ @post.message }
+    # end
+  end
 end
