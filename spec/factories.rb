@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :like do
+    post nil
+    user nil
+  end
   factory :comment do
     body "MyText"
     post nil

@@ -25,3 +25,8 @@ def add_comment
   fill_in 'Body', with: 'Hey, Salpal!'
   click_button('Create Comment')
 end
+
+def like
+  click_link('Hello, Instagram!')
+  click_button('Create Like')
+end

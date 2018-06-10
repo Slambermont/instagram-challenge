@@ -1,6 +1,9 @@
 <p> <%= @post.message %> </p>
 <p> @<%= (User.find_by(id: @post.user_id)).username %> </p>
 <%= image_tag @post.image.url(:large)%>
+
+<%= render 'likes/like' %>
+<%= render 'likes/form' %>
 <%= render 'comments/comment' %>
 <%= render 'comments/form' %>
 

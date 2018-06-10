@@ -1,0 +1,8 @@
+<p> <%= @likes.count %> Likes </p>
+
+<% @likes.each do |like| %>
+  <p>
+    <%= (User.find_by(id: like.user_id)).username %>
+    liked it.
+  </p>
+<% end %>
