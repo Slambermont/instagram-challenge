@@ -1,6 +1,8 @@
 def sign_up_and_sign_in
   visit('/')
   click_link('Sign up')
+  fill_in 'Name', with: 'Salomé'
+  fill_in 'Username', with: 'Salpal'
   fill_in 'Email', with: 'user@gmail.com'
   fill_in 'Password', with: 'password'
   fill_in 'Password confirmation', with: 'password'

@@ -19,4 +19,13 @@ RSpec.feature 'Shows a specific post', type: :feature do
     click_link('Back to Homepage')
     expect(current_path).to eq('/')
   end
+
+  scenario 'post shows username' do
+    sign_up_and_sign_in
+    click_link('New post')
+    fill_in "Message", with: "Hello, Instagram!"
+    click_button "Add a New Post"
+    click_link('Hello, Instagram!')
+    expect(page).to have_content('@Salpal')
+  end
 end
