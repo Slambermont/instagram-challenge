@@ -8,3 +8,20 @@ def sign_up_and_sign_in
   fill_in 'Password confirmation', with: 'password'
   click_button('Sign up')
 end
+
+def sign_out
+  visit('/')
+  click_link('Sign out')
+end
+
+def create_post
+  click_link('New post')
+  fill_in 'Message', with: 'Hello, Instagram!'
+  click_button('Add a New Post')
+end
+
+def add_comment
+  click_link('Hello, Instagram!')
+  fill_in 'Body', with: 'Hey, Salpal!'
+  click_button('Create Comment')
+end

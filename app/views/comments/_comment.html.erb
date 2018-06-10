@@ -1,0 +1,8 @@
+<p> <%= @comments.count %> Comments </p>
+
+<% @comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+    <%= (User.find_by(id: comment.user_id)).username %>
+  </p>
+<% end %>
