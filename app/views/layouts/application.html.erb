@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InstagramChallenge</title>
+    <title>Instagraham</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <% if user_signed_in? %>
-        <p> <%= link_to "Sign out", destroy_user_session_url, method: :delete %> </p>
-      <% else %>
-        <p> <%= link_to "Sign up", new_user_registration_url %> </p>
-        <p> <%= link_to "Sign in", new_user_session_url %> </p>
-      <% end %>
+      <div class='header-content'>
+        <div class='logo'>
+          <!-- <img src='../../app/assets/images/camera.png'> -->
+          <h1>Instagraham</h1>
+        </div>
+        <div class='menu'>
+          <% if user_signed_in? %>
+            <p> <%= link_to "Sign out", destroy_user_session_url, method: :delete %> </p>
+          <% else %>
+            <div class='account'>
+              <p> <%= link_to "Sign up", new_user_registration_url %> </p>
+              <p> <%= link_to "Sign in", new_user_session_url %> </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class='content'>
+      <div class='container'>
+        <div class='messages'>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <div class='page'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
