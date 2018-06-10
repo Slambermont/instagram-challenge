@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before(:each) do
+    @user = create(:user)
+    sign_in(@user)
+  end
+  
   describe 'GET /' do
     it 'responds with 200' do
       get :index

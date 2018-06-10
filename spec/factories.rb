@@ -5,5 +5,6 @@ FactoryBot.define do
   end
   factory :post do
     message 'Hello, Instagram!'
+    user { User.first || association(:user) }
   end
 end

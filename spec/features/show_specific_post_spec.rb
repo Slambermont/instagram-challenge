@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Shows a specific post', type: :feature do
   scenario 'shows post with id 1' do
-    visit ('/')
+    sign_up_and_sign_in
     click_link('New post')
     fill_in "Message", with: "Hello, Instagram!"
     click_button "Add a New Post"
@@ -11,7 +11,7 @@ RSpec.feature 'Shows a specific post', type: :feature do
   end
 
   scenario 'links back to homepage' do
-    visit ('/')
+    sign_up_and_sign_in
     click_link('New post')
     fill_in "Message", with: "Hello, Instagram!"
     click_button "Add a New Post"

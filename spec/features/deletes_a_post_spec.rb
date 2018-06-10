@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Edits a post', type: :feature do
   scenario 'udpates a posts' do
-    visit('/')
+    sign_up_and_sign_in
     click_link('New post')
     fill_in "Message", with: "Hello, Instagram!"
     click_button "Add a New Post"
